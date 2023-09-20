@@ -1,0 +1,212 @@
+:root {
+  --color-brand--1: #ffb545;
+  --color-brand--2: #00c46a;
+
+  --color-dark--1: #2d3439;
+  --color-dark--2: #42484d;
+  --color-light--1: #aaa;
+  --color-light--2: #ececec;
+  --color-light--3: rgb(214, 222, 224);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+.outer {
+  height: 37rem;
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  color: var(--color-light--2);
+  border: 1px solid var(--color-light--2);
+  /* overscroll-behavior-y: none; */
+}
+
+.app-content {
+  height: 100%;
+  width: 40%;
+  border-radius: 5px;
+  margin: 0 0.5rem;
+  background-color: var(--color-dark--1);
+}
+
+#map {
+  height: 100%;
+  width: 60%;
+  border-radius: 5px;
+  background-color: var(--color-light--1);
+}
+
+.title {
+  font-size: x-large;
+  font-weight: 600;
+  margin: 1rem;
+  text-align: center;
+}
+.title > i {
+  background-color: #ffffff;
+}
+
+.workouts {
+  height: 30rem;
+  width: 29rem;
+  margin: 1rem;
+  padding: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.workouts::-webkit-scrollbar {
+  width: 0;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--color-dark--2);
+  transition: all 0.5s, transform 1ms;
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+}
+
+.form_cross {
+  order: -1;
+  flex: 1 0 100%;
+  margin-left: 26rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #ddd;
+  font-size: larger;
+  cursor: pointer;
+}
+
+.form_row {
+  height: 1.5rem;
+  width: 10rem;
+  margin: 0.5rem 1.5rem;
+  /* border: 1px solid white; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.form_input {
+  width: 5rem;
+}
+
+.btn {
+  margin-left: 10rem;
+}
+
+.btn-submit {
+  width: 7rem;
+  background-color: #4298e3;
+  border: 1px solid #4298e3;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.form_row-hidden {
+  display: none;
+}
+
+.workout {
+  background-color: var(--color-dark--2);
+  border: 1px solid var(--color-dark--2);
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin-top: 0.8rem;
+  border-radius: 5px;
+}
+
+.workout__firstTitle {
+  order: -1;
+  flex: 1 0 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.workout_cross {
+  font-size: larger;
+  margin: 5px 8px;
+  cursor: pointer;
+}
+
+.workout__title {
+  margin: 5px 8px;
+  font-size: large;
+}
+
+.workout__details {
+  margin: 5px 5px;
+  margin-right: 17px;
+}
+
+.workout__unit {
+  font-size: small;
+  color: #a4a8a4;
+}
+
+.workout--running {
+  border-left: 5px solid var(--color-brand--2);
+}
+
+.workout--cycling {
+  border-left: 5px solid var(--color-brand--1);
+}
+
+/* popup width is defined */
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: var(--color-dark--1);
+  color: var(--color-light--2);
+  border-radius: 5px;
+  padding-right: 0.6rem;
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 0.8rem;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: var(--color-dark--1);
+}
+
+.running-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-brand--2);
+}
+.cycling-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-brand--1);
+}
+
+@media (max-width: 600px) {
+  .outer {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  #map {
+    width: 100%;
+    height: 25rem;
+    border: 2px solid var(--color-light--2);
+    margin: 0.5rem 0;
+  }
+  .app-content {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-light--2);
+    margin: 0;
+  }
+}
